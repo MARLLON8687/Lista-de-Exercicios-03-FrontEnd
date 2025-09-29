@@ -1,0 +1,34 @@
+<h1>Bem-vindo ao Sistema</h1>
+<p>Selecione uma das opções a seguir:</p>
+
+<button routerLink="/sobre">Sobre</button>
+<button routerLink="/contato">Contato</button>
+<hr />
+<button routerLink="/galeria">Galeria</button>
+<button routerLink="/noticias">Notícias</button>
+<hr />
+<button routerLink="/cursos">Cursos</button>
+<button routerLink="/professores">Professores</button>
+<hr />
+<button (click)="abrirLogin()">Login</button>
+
+<div class="modal" *ngIf="showLoginModal">
+  <div class="modal-content">
+    <h2>Login</h2>
+
+    <label>Usuário:</label>
+    <input [(ngModel)]="username" placeholder="Digite o usuário" />
+
+    <label>Senha:</label>
+    <input
+      [(ngModel)]="password"
+      type="password"
+      placeholder="Digite a senha"
+    />
+
+    <div class="modal-actions">
+      <button (click)="login()">Entrar</button>
+      <button (click)="fecharLogin()">Cancelar</button>
+    </div>
+  </div>
+</div>
